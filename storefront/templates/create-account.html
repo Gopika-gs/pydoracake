@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block createaccount %}
+
+        <!-- Login page content -->
+        <div class="container">
+            <div class="login-card card mt-5 ml-auto mr-auto">
+                <div class="card-body">
+                    <h4 class="create-account text-center">Create Account</h4>
+                    <form method="POST" action="register">
+                        {% csrf_token %}
+                        {% for message in messages %}
+                        <div class="alert alert-success">
+                            <a href="#" class="alert-link">{{ message }}</a>.
+                        </div>
+                        {% endfor%}
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter email">           
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password1" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password2" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" value="register" class="btn btn-primary"><i class="las la-user-plus"></i> Get Started</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %} 

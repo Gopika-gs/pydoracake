@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% load static %}
+   
+{% block detail%}
+        <!-- Detail page content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 mt-4">
+                    <img class="detail-image w-100" src={{object.img.url}}>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 mt-4">
+                    <h4>{{object.name}}</h4>
+                    <h2>&#8377; {{object.price}}</h2>
+                    <p class="text-muted">{{object.desc}}</p>
+                    <a class="btn btn-primary font-weight-bold" href="#" role="button"><i class="las la-cart-arrow-down"></i> Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}      
